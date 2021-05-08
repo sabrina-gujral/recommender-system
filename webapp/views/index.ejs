@@ -1,0 +1,57 @@
+<%- include("partials/header"); -%>
+<div class="main">
+  <div id="overlay"></div>
+  <div class="main">
+    <img class="mySlides" src="https://wallpapercave.com/wp/wp1945898.jpg" />
+    <img class="mySlides" src="https://i.redd.it/4fxxbm4opjd31.jpg" />
+    <div class="container top-layer">
+      <div class="container neons">
+        <span class="heading">
+          <img src="icon/brand_icon.svg" class="brand-icon" alt="brand"></i>&nbsp; Dionysus
+        </span>
+      </div>
+      <form class="home-form" action="/" method="POST">
+        <input
+          type="text"
+          name="name"
+          class="form-control top mt-4"
+          placeholder="Username"
+          autofocus=""
+          autocomplete="off"
+          required
+        />
+        <input
+          type="number"
+          name="userid"
+          class="form-control middle"
+          placeholder="UserId (within range 0 - 610)"
+          autocomplete="off"
+          required
+        />
+        <p
+          class="how-to mt-4 mb-0"
+          data-toggle="tooltip"
+          data-placement="top"
+          title="You can check recommendations for 600 other users who have rated
+        the movies in our dataset by entering any random userId between 0 and 610"
+        >
+          How to <i class="fa fa-question-circle"></i>
+        </p>
+        <br />
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+          Recommend
+        </button>
+        <br />
+        <p class="intro-text home-page-links nav-item mt-3">
+          <a href="https://still-dusk-52410.herokuapp.com/"><span class="mr-5">API</span></a>&nbsp;
+          <a href="https://github.com/sabrina-gujral/Dionysus"><span class="mr-5">GitHub</span></a>
+          <span><a href="https://linkedin.com/in/sabrina2616"></i> linkedin</a></span>
+        </p>
+        <small class="index-footer footer mt-5 mb-5 text-muted"
+          >&copy;2021 chilling_adventures</small
+        >
+      </form>
+    </div>
+  </div>
+</div>
+<%- include("partials/footer"); -%>

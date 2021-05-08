@@ -1,0 +1,32 @@
+<footer id="footer">
+  <a href="https://linkedin.com/in/sabrina2616"><i class="fa fa-linkedin"></i></a>
+  <a href="sabrinagujral26@gmail.com"><i class="fa fa-envelope"></i></a>
+  <a href="https://github.com/sabrina-gujral/Dionysus"><i class="fa fa-github"></i></a>
+  <a href="https://www.instagram.com/chilling._.adventures/"><i class="fa fa-instagram"></i></a>
+  <br>
+  <small class="footer mt-5 mb-5 text-muted date">chilling_adventures &copy;</small>
+</footer>
+
+<script>
+  $(document).ready(function(){
+        var date = new Date();
+        var year = date.getFullYear();
+        $('.date').append(year);
+    });
+    var slideIndex = 0;
+    carousel();
+
+    function carousel() {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > x.length) {slideIndex = 1}
+      x[slideIndex-1].style.display = "block";
+      setTimeout(carousel, 4000);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{
+  "name": "movflix",
+  "version": "1.0.0",
+  "description": "\"A movie recommendation system which uses the MovieAPI\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "node --inspect app.js"
+  },
+  "author": "Sabrina Gujral",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-timeout": "^1.9.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "https": "^1.0.0",
+    "lodash": "^4.17.21",
+    "python-shell": "^3.0.0"
+  }
+}
