@@ -1,17 +1,18 @@
-<%- include("partials/header"); -%>
-<%- include("partials/nav"); -%>
+<%- include("partials/header"); -%> <%- include("partials/nav"); -%>
 <div class="content">
   <div class="container intro">
     <h3 class="intro-heading">Hello, <%= name %></h3>
     <h5 class="intro-id">UserId: <%= userId %></h5>
     <br />
     <p class="intro-text">
-      Dionysus is a movie recommendation system that uses a MovieAPI and
-      recommends movies based on the data it has been trained on. The website is
-      a presentation of those recommendations in addition to a content-based
+      Dionysus is a movie recommendation system that uses a
+      <a href="https://still-dusk-52410.herokuapp.com/">MovieAPI</a> and
+      recommends movies based on Collaborative Filtering Approach. The website
+      is a presentation of those recommendations in addition to a content-based
       recommendation system. You, the anonymous, can check recommendations for
       600 other users who have rated the movies in our dataset by entering any
-      random userId.
+      random userId. Click on any movie and see content-based recommendations
+      for the same.
     </p>
     <div class="row">
       <div class="col-md-8">
@@ -39,9 +40,14 @@
             aria-haspopup="true"
             aria-expanded="false"
           >
-            <i class="fa fa-reorder"></i>&nbsp; <span class="filter-text">Filter</span>
+            <i class="fa fa-reorder"></i>&nbsp;
+            <span class="filter-text">Filter</span>
           </h5>
-          <div id="checkboxes" class="dropdown-menu checkbox" aria-labelledby="dropdownMenu2">
+          <div
+            id="checkboxes"
+            class="dropdown-menu checkbox"
+            aria-labelledby="dropdownMenu2"
+          >
             <form action="" method="">
               <% genres.forEach(function(g) { %>
               <div class="form-check">
@@ -69,33 +75,39 @@
   </div>
   <div class="container">
     <div class="row">
-    
-      <% rec.forEach(function(i){ %>
+      <% for(var i = 0; i < rec.length; i++) { %>
       <div class="col-md-3 wrapper">
-        <input type="text" name="title" value="<%= i.title %>" hidden>
+        <input type="text" name="title" value="<%= rec[i].title %>" hidden />
         <div id="<%= 'movie' + i %>" class="rec-card">
           <div class="rec-img-div">
-            <a href="/<%= i.title %>"
-              ><img class="rec-img" src="<%= i.poster %>" alt="poster"
-            /></a>
-            <a href="<%= i.movie_url %>"><i class="fa fa-link link"></i></a>
+            <a href="/<%= rec[i].title %>"
+              ><img class="rec-img" src="<%= rec[i].poster %>" alt="poster"/>
+              <div class="rating">
+                <div class="rating-inner">
+                  <% for (var j = 0 ; j < Math.round(ratings[i]); ++j ) { %>
+                    <span><i class="rating-star fa fa-star"></i></span>
+                    <% } %>
+                  <p class="text text-lg"><%= ratings[i].toFixed(3) %></p>
+                  <hr>
+                  <br>
+                  <p class="text">Director <br> <span class="text-lg"><%= rec[i].director %></span></p>
+                </div>
+              </div>
+            </a>
+            <a href="<%= rec[i].movie_url %>"><i class="fa fa-link link"></i></a>
           </div>
-          <small class="rec-title" name="" ><%= i.title %></small>
+          <small class="rec-title" name=""><%= rec[i].title %></small>
           <hr />
-          <small class="rec-genres"><%= i.genres %> </small>
+          <small class="rec-genres"><%= rec[i].genres %> </small>
         </div>
       </div>
       <br />
-      <% })%>
-    
+      <% } %>
     </div>
   </div>
 </div>
 
 <script>
-  $(document).ready(function(){
-    $('.content-form')
-  })
 </script>
 
 <%- include("partials/footer"); -%>
