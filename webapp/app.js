@@ -104,51 +104,6 @@ app.get("/rec/:userId/:name/:filters?/:title?", function (req, res) {
       return Promise.reject(new Error(response.statusText));
     }
   }
-
-  // https.get(url, function (response) {
-  //   var data;
-  //   response.on("data", function (chunk) {
-  //     if (!data) {
-  //       data = chunk;
-  //     } else {
-  //       data += chunk;
-  //     }
-  //   });
-
-  //   response.on("end", function () {
-  //     let movieRec = JSON.parse(data);
-  //     const genres = [];
-  //     movieRec.forEach((i) => genres.push(i.genres.split("|")));
-
-  //     if (typeof filters === "undefined") {
-  //       movieRec = movieRec;
-  //     } else if (typeof filters === "string") {
-  //       filters = [filters];
-  //       filterMovies(filters);
-  //     } else {
-  //       filterMovies(filters);
-  //     }
-
-  //     function filterMovies(filters) {
-  //       const movs = [];
-  //       filters.forEach(function (filter) {
-  //         movieRec.forEach((rec) =>
-  //           rec.genres.includes(filter) ? movs.push(rec) : null
-  //         );
-  //       });
-  //       movieRec = movs;
-
-  //       return movieRec;
-  //     }
-
-  //     res.render("list", {
-  //       rec: movieRec,
-  //       name: name,
-  //       userId: userId,
-  //       genres: genresList,
-  //     });
-  //   });
-  // });
 });
 
 app.post("/rec/:userId/:name/:filters?/", function (req, res) {
