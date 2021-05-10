@@ -52,10 +52,11 @@ app.get("/rec/:userId/:name/:filters?/:title?", function (req, res) {
   const userId = req.params.userId;
   const name = req.params.name;
   let filters = req.query.filter;
+  const baseURL = "https://still-dusk-52410.herokuapp.com/movies/";
 
   const urls = [
-    "https://still-dusk-52410.herokuapp.com/movies/" + userId + "/re",
-    "https://still-dusk-52410.herokuapp.com/movies/" + userId + "/ra",
+    baseURL + userId + "/re",
+    baseURL + userId + "/ra",
   ];
 
   var apiData = urls.map((url) => {

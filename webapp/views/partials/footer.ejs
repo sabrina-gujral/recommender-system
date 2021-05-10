@@ -7,6 +7,15 @@
   <small class="footer mt-5 mb-5 text-muted date">chilling_adventures &copy;</small>
 </footer>
 
+<div class="loader-wrapper">
+  <span class="loader"><span class="loader-inner"></span></span>
+</div>
+<script>
+    $(window).on("load",function(){
+      $(".loader-wrapper").hide();
+    });
+</script>
+
 <script>
   $(document).ready(function(){
         var date = new Date();
