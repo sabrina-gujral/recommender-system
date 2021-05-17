@@ -42,7 +42,7 @@ app.post("/", function (req, res) {
   const userId = req.body.userid;
 
   if (userId < 0 || userId > 610) {
-    res.render("404");
+    res.render("partials/404");
   } else {
     res.redirect("/rec/" + userId + "/" + name);
   }
